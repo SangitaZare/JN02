@@ -5,7 +5,7 @@ class Queue
 {
 private:
     struct Node
-	{
+    {
         int data;
         Node* next;
     };
@@ -15,7 +15,7 @@ private:
 
 public:
     Queue() 
-	{
+   {
         front = nullptr;
         rear = nullptr;
     }
@@ -29,7 +29,7 @@ public:
     }
 
     bool isEmpty() 
-	{
+    {
         return front == nullptr;
     }
 
@@ -40,7 +40,7 @@ public:
         newNode->next = nullptr;
 
         if (isEmpty())
-		{
+	{
             front = rear = newNode;
         }
 		else
@@ -50,9 +50,10 @@ public:
         }
     }
 
-    int dequeue() {
+    int dequeue() 
+    {
         if (isEmpty())
-		{
+	{
             cerr << "Queue is empty!" << endl;
             return -1;
         }
@@ -62,7 +63,7 @@ public:
         front = front->next;
 
         if (front == nullptr)
-		{
+	{
             rear = nullptr;
         }
 
@@ -71,9 +72,9 @@ public:
     }
 
     int peek() 
-	{
+    {
         if (isEmpty()) 
-		{
+	{
             cerr << "Queue is empty!" << endl;
             return -1;
         }
@@ -91,7 +92,7 @@ int main()
 
     int item;
     for (int i = 0; i < numItems; i++)
-	{
+    {
         cout << "Enter item " << i + 1 << ": ";
         cin >> item;
         queue.enqueue(item);
@@ -101,7 +102,7 @@ int main()
 
     cout << "Dequeueing items from the queue:" << endl;
     while (!queue.isEmpty())
-	{
+    {
         cout << queue.dequeue() << endl;
     }
 
