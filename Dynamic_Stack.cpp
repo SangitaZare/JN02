@@ -5,7 +5,7 @@ class Stack
 {
 private:
     struct Node 
-	{
+    {
         int data;
         Node* next;
     };
@@ -14,25 +14,25 @@ private:
 
 public:
     Stack()
-	{
+    {
         top = nullptr;
     }
 
     ~Stack() 
-	{
+    {
         while (!isEmpty())
-		{
+	{
             pop();
         }
     }
 
     bool isEmpty() 
-	{
+    {
         return top == nullptr;
     }
 
     void push(int item) 
-	{
+    {
         Node* newNode = new Node;
         newNode->data = item;
         newNode->next = top;
@@ -40,9 +40,9 @@ public:
     }
 
     int pop()
-	{
+    {
         if (isEmpty()) 
-		{
+	{
             cerr << "Stack is empty!" << endl;
             return -1;
         }
@@ -55,9 +55,9 @@ public:
     }
 
     int peek()
-	{
+    {
         if (isEmpty())
-		{
+	{
             cerr << "Stack is empty!" << endl;
             return -1;
         }
@@ -75,7 +75,7 @@ int main()
 
     int item;
     for (int i = 0; i < numItems; i++)
-	{
+    {
         cout << "Enter item " << i + 1 << ": ";
         cin >> item;
         stack.push(item);
@@ -85,7 +85,7 @@ int main()
 
     cout << "Popping items from the stack:" << endl;
     while (!stack.isEmpty())
-	{
+    {
         cout << stack.pop() << endl;
     }
 
